@@ -1,0 +1,23 @@
+# deployment.yaml file:
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-resume
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio-resume
+  template:
+    metadata:
+      labels:
+        app: portfolio-resume
+    spec:
+      containers:
+      - name: portfolio-resume
+        image: portfolio-resume:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+

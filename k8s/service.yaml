@@ -1,0 +1,16 @@
+# service.yaml  file:
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio-resume-service
+spec:
+  type: NodePort
+  selector:
+    app: portfolio-resume
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30009
+
