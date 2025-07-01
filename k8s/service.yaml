@@ -1,16 +1,12 @@
-# service.yaml  file:
-
 apiVersion: v1
 kind: Service
 metadata:
-  name: portfolio-resume-service
+  name: portfolio-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
-    app: portfolio-resume
+    app: portfolio
   ports:
-    - protocol: TCP
-      port: 80
+    - port: 80
       targetPort: 80
-      nodePort: 30009
 
